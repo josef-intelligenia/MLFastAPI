@@ -7,7 +7,6 @@ Una API en FastAPI para servir predicciones de un modelo de clasificación de fl
 ## 📁 Estructura del Proyecto
 
 ```
-
 fastapi-ml-api/
 │
 ├── app/
@@ -15,7 +14,7 @@ fastapi-ml-api/
 │   ├── model.py          # Lógica para cargar y predecir con el modelo
 │   ├── model.joblib      # Modelo entrenado
 │
-├── train\_model.py        # Script para entrenar y guardar el modelo
+├── train_model.py        # Script para entrenar y guardar el modelo
 ├── requirements.txt      # Dependencias del proyecto
 ├── Dockerfile            # Dockerfile para producción
 ├── Dockerfile.dev        # Dockerfile para desarrollo con hot reload
@@ -23,8 +22,7 @@ fastapi-ml-api/
 ├── render.yaml           # Configuración para desplegar en Render.com
 ├── Makefile              # Comandos útiles centralizados
 └── README.md             # Este archivo
-
-````
+```
 
 ---
 
@@ -36,7 +34,7 @@ Antes de ejecutar la API, debes entrenar y guardar el modelo:
 
 ```bash
 make train
-````
+```
 
 Esto genera el archivo `app/model.joblib`.
 
@@ -87,7 +85,6 @@ make test-predict
 ## 🧠 Entrenamiento del Modelo
 
 ```python
-# train_model.py
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 import joblib
@@ -133,7 +130,6 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload
 3. Render detectará el archivo `render.yaml` y desplegará automáticamente
 
 ```yaml
-# render.yaml (ya incluido)
 services:
   - type: web
     name: iris-api
@@ -169,9 +165,4 @@ make run-dev         # Ejecuta contenedor en modo desarrollo
 make test-connection # Prueba conexión con GET /
 make test-predict    # Prueba predicción con POST /predict
 ```
-
-
-
----
-
 
