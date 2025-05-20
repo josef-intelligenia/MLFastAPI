@@ -1,8 +1,3 @@
-Perfecto. Aquí tienes un ejemplo de `README.md` claro y completo para tu proyecto `fastapi-ml-api`, que describe la funcionalidad, estructura, comandos importantes y despliegue:
-
----
-
-```markdown
 # 🌸 FastAPI ML API - Iris Classifier
 
 Una API en FastAPI para servir predicciones de un modelo de clasificación de flores **Iris** entrenado con **scikit-learn**, lista para ejecutarse en modo desarrollo, producción o desplegarse en la nube (Render, GCP, etc).
@@ -175,8 +170,8 @@ make test-connection # Prueba conexión con GET /
 make test-predict    # Prueba predicción con POST /predict
 ```
 
-```
+
 
 ---
 
-```
+
