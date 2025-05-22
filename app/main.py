@@ -6,6 +6,7 @@ import numpy as np
 app = FastAPI()
 
 model = joblib.load("app/model.joblib")
+target_names = ["setosa", "versicolor", "virginica"]
 
 class IrisInput(BaseModel):
     sepal_length: float
@@ -21,5 +22,9 @@ def root():
 def predict(input: IrisInput):
     X = np.array([[input.sepal_length, input.sepal_width,
                    input.petal_length, input.petal_width]])
-    pred = model.predict(X)
-    return {"prediction": int(pred[0])}
+    pred = model.predict(X)[0]
+    class_name = target_names[pred]
+    return {
+        "prediction": int(pred),
+        "class": class_name
+    }
